@@ -1,0 +1,57 @@
+//
+//  basicFramework.pch
+//  basicFramework
+//
+//  Created by Bad on 2019/2/27.
+//  Copyright © 2019 studentW. All rights reserved.
+//
+
+#ifndef basicFramework_pch
+#define basicFramework_pch
+
+#import "AppDelegate.h"
+#import <Availability.h>
+
+#pragma mark 数据返回
+typedef void (^DefaultBlock)(void);
+typedef void (^Success)(NSMutableArray * _Nullable result); //成功返回
+typedef void (^SuccessBlock)(NSDictionary * _Nullable result); //成功返回
+typedef void (^SuccessString)(NSString * _Nullable result);   // 文字版返回
+typedef void (^SuccessTwo)(NSMutableArray * _Nullable result,NSString * _Nullable page); //上拉加载
+typedef void (^SuccessTwoArrayBlock)(NSMutableArray * _Nullable One_result,NSMutableArray * _Nullable Two_result);
+typedef void (^SuccessVoid)(void); // 成功空返回
+typedef void (^ErrorVoid)(void); //失败空返回
+typedef void (^FailedBlock)(NSString * _Nullable result);  //错误返回
+typedef void (^ProgressBlock)(NSProgress * _Nullable progress); //进度返回
+
+/** 第三方框架  */
+#pragma mark 第三方框架
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <Reachability/Reachability.h>
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <ProjectCommon/DRCommonHeader.h>
+//#import <TZImagePickerController.h>
+//#import <Toast/UIView+Toast.h>
+//#import <ZXNavigationBarController.h>
+//#import <WMZPageController/WMZPageController.h>
+
+/** 工具类  */
+#pragma mark 工具类
+#import "Tools.h"
+#import "TabItemViewController.h"
+#import "basicFramework-Swift.h"
+
+
+
+/** 动态公共 margin */
+#define communal_margin      10
+#define communal_icon        24
+#define communal_color       UIColorFromHex(0xA493FF)
+#define default_avatar       [UIImage imageNamed:@"default_avatar"]
+
+
+
+#endif /* basicFramework_pch */

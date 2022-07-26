@@ -1,0 +1,94 @@
+platform :ios, '13.0'
+use_frameworks!
+
+
+#--------------------------------------------------------------------------------------------------------------
+# Base
+#--------------------------------------------------------------------------------------------------------------
+def base
+  
+  #  AFNetworking
+  pod 'AFNetworking'
+  pod 'Reachability'
+
+  # 布局控件
+  pod 'Masonry'
+  pod 'SnapKit'
+  pod 'SDAutoLayout'
+  
+  # 刷新
+  pod 'MJRefresh'
+  
+  # 提示框
+  pod 'SVProgressHUD'
+  pod 'MBProgressHUD'
+
+  # 加载图片
+   pod 'SDWebImage'
+   
+   # 加载数据
+   pod 'MJExtension'
+   
+   pod 'ReactiveCocoa'
+   pod 'ReactiveObjC'
+   
+   pod 'ProjectCommon', :git => 'https://GBLW@bitbucket.org/wwyproject/projectcommon.git', :tag => "0.1.5"
+   pod 'DRNetWork', :git => 'https://github.com/badboywww/DRNetWork.git', :tag => '0.1.1'
+   pod 'DRUtils', :git => 'https://github.com/badboywww/DRUtils.git', :tag => '0.1.0'
+   
+end
+
+# 弹窗
+# pod 'Toast', '~> 4.0.0'
+# Alipay
+# pod  'AlipaySDK-iOS'
+# 渐变导航条
+# pod 'ZXNavigationBar'
+# 分页控制器
+# pod 'WMZPageController'
+# 进度条
+# pod 'DACircularProgress'
+# websocket
+# pod 'SocketRocket'
+# 相册
+# pod 'TZImagePickerController'
+# emoji
+# pod 'ISEmojiView'
+
+#--------------------------------------------------------------------------------------------------------------
+# Target
+#--------------------------------------------------------------------------------------------------------------
+target 'basicFramework' do
+  base
+end
+
+
+#############################################################
+##                                                          #
+##    -                     Hooks                     -     #
+##                                                          #
+#############################################################
+
+
+post_install do |installer|
+    # puts 为在控制台打印方法
+    puts "##### post_install start #####"
+
+    # 为了打印的日志方便查看，使用╟符号修饰
+    puts "╟ podfile"
+    # 打印podfile属性列表
+    installer.podfile.instance_variables.each do |variableName|
+        # 遍历属性并打印
+        puts "  ╟ #{variableName}"
+    end
+
+    puts "╟ lockfile"
+    # 打印lockfile属性列表
+    installer.lockfile.instance_variables.each do |variableName|
+        # 遍历属性并打印
+        puts "  ╟ #{variableName}"
+    end
+
+    # 暂时只看属性，不打印方法列表，因为暂时只看属性就够了
+    puts "##### post_install end #####"
+end
